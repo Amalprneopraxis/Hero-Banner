@@ -1,16 +1,15 @@
-// webpack.config.js
 const path = require('path');
 
 module.exports = {
   mode: 'production',
-  entry: './src/Herobanner.js', // Path to your component entry file
+  entry: './src/Herobanner.js',
   output: {
-    path: path.resolve(__dirname, 'dist'), // Output directory
-    filename: 'Herobanner.bundle.[chunkhash].js', // Output filename
-    library: 'Herobanner', // Name of the library
-    libraryTarget: 'umd', // Output module format
-    umdNamedDefine: true, // Define the module's name for AMD
-    globalObject: 'this' // Define the global object used,
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'Herobanner.bundle.[chunkhash].js',
+    library: 'Herobanner',
+    libraryTarget: 'umd',
+    umdNamedDefine: true,
+    globalObject: 'this'
   },
   module: {
     rules: [
@@ -20,7 +19,11 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env', '@babel/preset-react'],
+            presets: ['@babel/preset-env'],
+            plugins: [
+              ['@babel/plugin-transform-react-jsx', { pragma: 'React.createElement' }],
+              '@babel/plugin-transform-react-jsx-self'
+            ]
           },
         },
       },
@@ -28,7 +31,6 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
       },
-      
     ],
   },
 };
