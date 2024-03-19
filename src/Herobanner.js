@@ -34,13 +34,13 @@ const Herobanner = () => {
     return (
       <div className="slideshow-container">
         <div className="mySlides">
-          <q style={{color: "red"}}>............I love you the more in that I believe you had liked me for my own sake and for nothing else</q>
+          <q style={{color: "red"}}>BigCommerce offers a comprehensive e-commerce solution that combines advanced functionality with user-friendly design</q>
         </div>
         <div className="mySlides">
-          <q style={{color: "red"}}>But man is not made for defeat.</q>
+          <q style={{color: "red"}}>With BigCommerce, businesses can seamlessly scale their online operations</q>
         </div>
         <div className="mySlides">
-          <q style={{color: "red"}}> I have not failed. I've just found 10,000 ways that won't work.</q>
+          <q style={{color: "red"}}> BigCommerce empowers businesses of all sizes to build.</q>
         </div>
       </div>
     );
